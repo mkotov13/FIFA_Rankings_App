@@ -1,1 +1,12 @@
-<h1>My First Angular 2 App</h1>
+<div class="col-md-12">
+    <h1>{{title}}</h1>
+    <h2>My Players</h2>
+    <ul class="players">
+        <li *ngFor="let player of players"
+            [class.selected]="player == selectedPlayer"
+            (click)="onSelect(player)">
+            <span class="badge">{{player.id}}</span> {{player.name}}
+        </li>
+    </ul>
+    <my-player-detail [player]="selectedPlayer"></my-player-detail>
+</div>
