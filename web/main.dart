@@ -3,6 +3,7 @@
 
 import 'package:angular2/platform/browser.dart';
 
+import 'package:untitled/players_component.dart';
 import 'package:untitled/app_component.dart';
 
 main() {
