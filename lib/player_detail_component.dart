@@ -19,5 +19,4 @@ import 'player.dart';
 class PlayerDetailComponent {
   @Input()
   Player player;
-
 }

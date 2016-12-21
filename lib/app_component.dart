@@ -2,18 +2,8 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 
 import 'package:angular2/core.dart';
-//import 'player.dart';
-//import 'player_detail_component.dart';
-
-class Player {
-  final int id;
-  String name;
-  String country;
-  String fav_team;
-  String trait;
-
-  Player(this.id, this.name, this.country, [this.fav_team, this.trait]);
-}
+import 'player.dart';
+import 'player_detail_component.dart';
 
 @Component(
   selector: 'my-app',
@@ -27,14 +17,7 @@ class Player {
             <span class="badge">{{player.id}}</span> {{player.name}}
         </li>
     </ul>
-    <div *ngIf="selectedPlayer != null">
-        <h2>{{selectedPlayer.name}} details!</h2>
-        <div><label>id: </label>{{selectedPlayer.id}}</div>
-        <div>
-          <label>name: </label>
-          <input [(ngModel)]="selectedPlayer.name" placeholder="name"/>
-        </div>
-      </div>
+    <my-player-detail [player]="selectedPlayer"></my-player-detail>
   ''',
     styles: const [
     '''
@@ -84,7 +67,8 @@ class Player {
         margin-right: .8em;
         border-radius: 4px 0px 0px 4px;
       }
-    ''']
+    '''],
+directives: const [PlayerDetailComponent]
 )
 class AppComponent {
   final String title = 'Hill 119 FIFA Player Rankings';
