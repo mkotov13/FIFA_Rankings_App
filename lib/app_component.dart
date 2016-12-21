@@ -1,9 +1,13 @@
 // Copyright (c) 2016, Max. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 
+import 'dart:async';
+
 import 'package:angular2/core.dart';
+
 import 'player.dart';
 import 'player_detail_component.dart';
+import 'player_service.dart';
 
 @Component(
   selector: 'my-app',
@@ -68,21 +72,26 @@ import 'player_detail_component.dart';
         border-radius: 4px 0px 0px 4px;
       }
     '''],
-directives: const [PlayerDetailComponent]
+directives: const [PlayerDetailComponent],
+providers: const [PlayerService]
 )
-class AppComponent {
-  final String title = 'Hill 119 FIFA Player Rankings';
-  Player dft_player = new Player(1, 'Michael', 'USA', 'Bayern Munich', 'Long shots and trying to spin (without success)');
-  final List<Player> players = mockPlayers;
+class AppComponent implements OnInit {
+  String title = 'Hill 119 FIFA Player Rankings';
+  List<Player> players;
   Player selectedPlayer;
+
+  final PlayerService _playerService;
+  AppComponent(this._playerService);
+
+  void ngOnInit () {
+    getPlayers();
+  }
+
+  Future<Null> getPlayers() async {
+    players = await _playerService.getPlayers();
+  }
 
   void onSelect(Player player) {
     selectedPlayer = player;
   }
 }
-
-final List<Player> mockPlayers = [
-  new Player(11, 'Max', 'Russia', 'Chelsea', 'Maxing (obnoxious and unnecessary flexing)'),
-  new Player(12, 'Thomas', 'South Korea', 'FC Barcelona', 'Actually, he is not that good, so we are okay with his playing style'),
-  new Player(13, 'Zyaid', 'Jordan', 'Real Madrid', 'Zyaiding (excessive and disgusting slide tackling)')
-];

@@ -11,7 +11,10 @@ import 'player.dart';
         <div>
           <label>name: </label>
           <input [(ngModel)]="player.name" placeholder="name">
-
+        </div>
+        <div>
+          <label>trait:</label>
+          {{player.trait}}
         </div>
       </div>'''
 )
