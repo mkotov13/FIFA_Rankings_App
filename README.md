@@ -1,7 +1,9 @@
 # Final Project for ProgrammingLanguages class
 In an attempt to showcase the most promiment features of Dart programming language ([dartlang.org](http://dartlang.org)), we decided to build a web application that would store information about FIFA games that take place in my dorm room, Hill 119. 
 
-BTW, big shout-out to [Michael Chang'13](http://https://src-code.simons-rock.edu/git/mchang13) for his help with making this project happen.
+BTW, big shout-out to [Michael Chang'13](https://src-code.simons-rock.edu/git/mchang13) for his help with making this project happen.
+
+
 
 ## Where can I take a look at it?
 
