@@ -2,7 +2,7 @@ name: untitled
 description: A Dart app that uses Angular 2
 version: 0.0.1
 environment:
-  sdk: '>=1.9.0 <1.10.0'
+  sdk: '>=1.9.0 <1.11.0'
 dependencies:
   angular2: ^2.2.0
 dev_dependencies:
